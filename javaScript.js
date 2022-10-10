@@ -16,4 +16,9 @@ function create (){
     grid3.classList.add('grid');
 }
 
+container.addEventListener('mouseover', function(){
+    console.log('touch');
+    const grid2 = document.querySelector('.grid3');
+});
+
 loop();
