@@ -13,7 +13,7 @@ function create (){
     container.append(grid3)
     grid3.style.padding = '20px';
     grid3.style.border = '2px solid black';
-    grid3.classList.add('column');
+    grid3.classList.add('grid');
 }
 
 loop();
