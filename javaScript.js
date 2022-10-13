@@ -1,5 +1,4 @@
 const container = document.querySelector('.container');
-const plasticContainer = document.querySelector('.plasticContainer');
 function loop(){
     for(let row = 1; row <= 16; row++){
     create(row);
@@ -16,9 +15,12 @@ function create (){
     grid3.classList.add('grid');
 }
 
-container.addEventListener('mouseover', function(){
-    console.log('touch');
-    const grid2 = document.querySelector('.grid3');
-});
+const box = document.querySelectorAll('.grid');
+container.addEventListener('mouseover',color);
+
+function color(e){
+    if(e.target.id !== 'container')
+        e.target.style.backgroundColor = 'black';
+} //e.target isolates the element in a sea of class
 
 loop();
