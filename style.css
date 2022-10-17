@@ -3,8 +3,15 @@
     flex-wrap: wrap;
     width: 960px;
     height: 960px;
+    justify-content: center;
+    align-items: center;
 }
 
 .colorGrid{
     background-color: black;
+}
+
+.input{
+    display: flex;
+    align-items: center;
 }

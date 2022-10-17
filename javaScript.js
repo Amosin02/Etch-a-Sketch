@@ -32,15 +32,18 @@ const click = document.createElement('button');
 input.append(click);
 click.textContent = 'Set grid';
 
-
-
-
-
-
 click.addEventListener('click', function(){
     let num2 = prompt('Set the squares: ');
-    steps();
-    loop2(num2);
+    while (num2 == null){
+        num2 = prompt('Set the squares: ');
+    } if (num2 <= 50 && num2 >= 1){
+        console.log(num2);
+        steps();
+        loop2(num2);
+        pads(num2);
+    } else {
+        num2 = prompt('Set the square (1 is the minimum and 50 is the maximum):')
+    }
 });
 
 function steps(){
@@ -56,18 +59,21 @@ function loop2(num2){
         for(let col = 1; col < num2; col++){
         create2(col);
     }}
-    // let pad2 = ((960/num2)/2)-1;
-    // const fill = document.getElementsByClassName('grid');
-    // console.log(fill);
-    // fill.style.border = '1px solid red';
 }
 
 function create2 (){
     const grid3 = document.createElement('div');
     container.append(grid3)
-    //grid3.style.padding = pad2 + 'px';
     grid3.style.border = '1px solid black';
     grid3.classList.add('grid');
+}
+
+function pads(num2){
+    let pad2 = ((960/num2)/2)-1;
+    const pad3 = document.getElementsByClassName('grid');
+    for(grid of pad3){ //for each grid.div change ang padding to pad2
+        grid.style.padding = pad2 + 'px';
+    }
 }
 
 loop();
